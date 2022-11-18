@@ -1,16 +1,32 @@
-import { heroes } from './data/heroes';
+import { getHeroe } from './bases/08-imports-exports-funciones';
 
 
+// const promesa = new Promise((resolve,reject)=>{
+//    setTimeout(()=>{
+//       const heroe = getHeroe(2);
+//       resolve(heroe);
+//       //reject('Hubo error');
+//    },2000)
+// });
 
-//const found = heroes.find(element => element.id > 3);
+// promesa.then((heroe)=>{
+//    console.log("resultado de la promesa ",heroe);
+// })
+// .catch(err=>console.warn(err));
 
-
-const  getHeroe = (id)=>{
-   return heroes.find(element => element.id === id)
+const getHeroeByIdAsync = (id)=>{
+ return new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+       const heroe = getHeroe(id);
+       if(heroe){
+         resolve(heroe);
+       }else{
+         reject('No encontrado');
+       }
+    },2000)
+ });
 }
 
-
-//console.log(found);
-
-console.log(getHeroe(2));
-
+getHeroeByIdAsync(2)
+.then(console.log)
+.catch(console.warn);
