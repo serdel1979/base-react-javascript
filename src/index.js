@@ -6,7 +6,7 @@ import { heroes } from './data/heroes';
 
 
 const  getHeroe = (id)=>{
-   return heroes.find(element => element.id == id)
+   return heroes.find(element => element.id === id)
 }
 
 
