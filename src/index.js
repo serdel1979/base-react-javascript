@@ -1,34 +1,16 @@
-//Funciones
+import { heroes } from './data/heroes';
 
-// const saludar = function (nombre){
-//     return `Hola, ${nombre}`
-// }
 
-// const saludar2 = (nombre)=>{
-//     return `Hola, ${nombre}`
-// }
 
-//es equivalente
-const saludar2 = (nombre)=>`Hola ${nombre}`;
+//const found = heroes.find(element => element.id > 3);
 
-const fun = ()=>`Hola ...`;
 
-const getUser = ()=>{
-    return {
-        uid: 'ABC',
-        USERNAME: 'eL_PIPO'
-    }
+const  getHeroe = (id)=>{
+   return heroes.find(element => element.id == id)
 }
 
-const getUsuarioActivo = (user)=>({
-    uid: 'ABC654',
-    username: user
-})
 
-console.log(saludar2('pepe'));
+//console.log(found);
 
-console.log(fun());
+console.log(getHeroe(2));
 
-console.log(getUser());
-
-console.log(getUsuarioActivo('papo'));
